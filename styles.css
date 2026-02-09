@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #e6f4ee;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Card */
+form {
+  background: #ffffff;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #1f2937;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+label, p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0f766e;
+}
+
+/* Query Type */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.option input {
+  accent-color: #0f766e;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #115e59;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Errors */
+.error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.center {
+  text-align: left;
+}
+
+/* Error States */
+.input-error {
+  border-color: #dc2626;
+  background: #fff5f5;
+}
+
+.option-error {
+  border-color: #dc2626;
+}
+
+/* Toast - Notificaciones */
+.toast {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f3d3a;
+  color: white;
+  padding: 16px 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  animation: slideDown .4s ease;
+  z-index: 1000;
+  min-width: 300px;
+  text-align: center;
+}
+
+.toast-success {
+  background: #065f46;
+}
+
+.toast-error {
+  background: #991b1b;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 600px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .toast {
+    min-width: 280px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

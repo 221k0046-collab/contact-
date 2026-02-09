@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <form id="contactForm">
+
+    <h2>Contact Us</h2>
+
+    <!-- First / Last Name -->
+    <div class="row two-columns">
+      <div>
+        <label>First Name *</label>
+        <input type="text" id="first-name">
+        <small class="error" id="error-first-name"></small>
+      </div>
+
+      <div>
+        <label>Last Name *</label>
+        <input type="text" id="last-name">
+        <small class="error" id="error-last-name"></small>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="row">
+      <label>Email Address *</label>
+      <input type="email" id="email">
+      <small class="error" id="error-email"></small>
+    </div>
+
+    <!-- Query Type -->
+    <div class="row">
+      <p>Query Type *</p>
+
+      <div class="two-columns">
+        <label class="option">
+          <input type="radio" name="query-type" value="general">
+          General Enquiry
+        </label>
+
+        <label class="option">
+          <input type="radio" name="query-type" value="support">
+          Support Request
+        </label>
+      </div>
+
+      <small class="error" id="error-query"></small>
+    </div>
+
+    <!-- Message -->
+    <div class="row">
+      <label>Message *</label>
+      <textarea id="message"></textarea>
+      <small class="error" id="error-message"></small>
+    </div>
+
+    <!-- Consent -->
+    <div class="row checkbox">
+      <label>
+        <input type="checkbox" id="consent">
+        I consent to being contacted by the team *
+      </label>
+    </div>
+    <small class="error center" id="error-consent"></small>
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+  <script src="validacion.js"></script>
+</body>
+</html>
